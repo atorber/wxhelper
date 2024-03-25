@@ -1,5 +1,9 @@
 import fs from 'fs'
 
+export const getTimeLocaleString = () => {
+    return new Date().toLocaleString()
+  }
+  
 export const writeMsgStore = (messageStore: { [key: string]: any }, msg: { type: number, content?:any }) => {
     // 检测根目录下是否有msgStore.json文件，如果没有，则创建一个，内容为{}
     if (!fs.existsSync('msgStore.json')) {

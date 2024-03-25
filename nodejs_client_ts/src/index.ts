@@ -89,8 +89,15 @@ export const sendFileMsg = (wxid: string, filePath: string) => {
 //     }
 //     response = requests.request("POST", url, headers=headers, data=payload)
 //     print(response.text)
-export const hookSyncMsg = (port: string, ip: string, url: string, timeout: string, enableHttp: string) => {
-    return post('/api/hookSyncMsg', { port, ip, url, timeout, enableHttp })
+
+export const hookSyncMsg = (parm: {
+    port: string
+    ip: string
+    url: string
+    timeout: string
+    enableHttp: string
+}) => {
+    return post('/api/hookSyncMsg', parm)
 }
 
 
